@@ -1,5 +1,5 @@
 CC=clang
-CFLAGS=-I./include
+CFLAGS=-I./include -g
 
 BUILD_DIR = obj
 TARGET = gbmu

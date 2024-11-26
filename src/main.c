@@ -42,21 +42,6 @@ int main () {
     fread(rom_buffer, fsize, 1, f);
     fclose(f);
 
-	for (int i = 0; i < 0xFFFFFFFF; i++) {
-		uint32_t last_mask = 0;
-		for (int j = 0; j < sizeof(opcode_types) / sizeof(opcode_types[0]); j++) {
-			if ((i & opcode_types[j].mask) == opcode_types[j].value) {
-				if (last_mask) {
-					printf("%08x %08x %08x %08x %08x\n", i, i & opcode_types[j].mask, opcode_types[j].mask, opcode_types[j].value, last_mask);
-					break;
-				}
-				
-				last_mask = opcode_types[j].mask;
-			}
-		}
-	}
-
-
 
     //hex_dump(rom_buffer, fsize);
 
