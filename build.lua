@@ -7,9 +7,11 @@ project "gbmu"
    language "C++"
    targetdir "bin/%{cfg.buildcfg}"
    objdir "obj/%{cfg.buildcfg}"
+   libdirs { "libs/**" }
 
-   files { "src/**.c", "src/**.cpp", "include/**.h" }
+   files { "src/**.c", "src/**.cpp", "src/**.h", "include/**.h" }
    includedirs { "include" }
+   links { "SDL3.lib" }
 
    filter "configurations:Debug"
       defines { "DEBUG" }
